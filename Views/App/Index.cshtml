@@ -1,0 +1,55 @@
+﻿    <h2>@ViewBag.Title</h2>
+
+    <div class="product-info">
+        <img src="~/img/vanGogh.jpg" />
+        <h3>Mug</h3>
+        <ul class="product-props">
+            <li>Price: $9.99</li>
+            <li>Artist: Van Gough</li>
+            <li>Title: Van Gough</li>
+            <li>Description: Self portrait</li>
+        </ul>
+        <button id="buyButton">Buy</button>
+    </div>
+
+    <div id="theForm">
+        <form action="/" method="post">
+
+            <label for="name">Name:</label><br />
+            <input type="text" name="name" value="" />
+            <br />
+            <label for="email">Email:</label><br />
+            <input type="email" name="email" value="" />
+            <br />
+            <label for="subject">Subject:</label><br />
+            <input type="text" name="subject" value="" />
+            <br />
+            <label for="message">Message:</label><br />
+            <textarea rows="3"></textarea>
+            <br />
+            <input type="submit" name="submit" value="Send Message" />
+        </form>
+    </div>
+
+    <div>
+        <div class="loginToggle">
+            Login
+        </div>
+        <form class="popup-form" action="/" method="post">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" name="username" value="" />
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" value="" />
+            </div>
+            <div>
+                <input type="checkbox" name="rememberMe" value="" />
+                <label for="rememberMe">Remember me?</label>
+            </div>
+            <div>
+                <input type="submit" name="popupSubmit" value="Login" />
+            </div>
+        </form>
+    </div>
