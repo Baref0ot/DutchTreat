@@ -1,6 +1,9 @@
+using DutchTreat.Serivces;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+builder.Services.AddTransient<IMailService, NullMailService>();
 
 var app = builder.Build();
 
