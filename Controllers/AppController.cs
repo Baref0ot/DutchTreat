@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DutchTreat.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.IIS.Core;
 
 namespace DutchTreat.Controllers {
@@ -16,7 +17,11 @@ namespace DutchTreat.Controllers {
         }
 
         [HttpPost("contact")]
-        public IActionResult Contact(object model) {
+        public IActionResult Contact(ContactViewModel model) {
+            if (ModelState.IsValid) { 
+                // send email
+                _mailService.SendMail("mattwright@yahoo.com", model.Subject, $"From: {model.Name}, {model.Email}, Message: {model.Message}")
+            }
             return View();
         }
 
