@@ -1,9 +1,11 @@
 using DutchTreat.Serivces;
+using DutchTreat.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddTransient<IMailService, NullMailService>();
+builder.Services.AddTransient<IPracticeASP, PracticeASP>();
 
 var app = builder.Build();
 
@@ -26,4 +28,4 @@ app.MapControllerRoute(
     );
 
 
-app.Run();
+ app.Run();
